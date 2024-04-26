@@ -1,0 +1,2418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Barangay Information System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <div class="container">
+        <!-- Login and Register Modules -->
+        <!-- Your login and register modules remain the same -->
+        <!-- Login Module -->
+        <div id="loginModule" class="module">
+          <h2>Login</h2>
+          <div class="logo-container">
+              <img src="logoPUROK.png" class="logopic" alt="Logo">
+              <header class="module-header">Barangay Information System</header>
+          </div>
+          <form id="loginForm">
+              <input type="text" id="username" placeholder="Username" required>
+              <input type="password" id="password" placeholder="Password" required>
+             <select id="position" name="position" required title="Position">
+                <option value="" disabled selected>Select Position</option>
+                <option value="BrgyOfficial">Brgy. Captain</option>
+                <option value="BrgyOfficial">Brgy. Secretary</option>
+                <option value="BrgyCouncilor">Brgy. Treasurer</option>
+                <option value="BrgyCouncilor">Brgy. Councilor</option>
+             </select>
+              <button type="submit">Login</button>
+              <p>Don't have an account? <a href="#" id="showRegisterForm">Register</a></p>
+          </form>
+      </div>
+  
+      <!-- Register Module -->
+      <div id="registerModule" class="module">
+        <h2>Register</h2>
+        <div class="logo-container">
+            <img src="logoPUROK.png" class="logopic" alt="Logo">
+            <header class="module-header">Barangay Information System</header>
+        </div>
+        <form id="registerForm">
+            <input type="text" id="newUsername" placeholder="New Username" required>
+            <input type="password" id="newPassword" placeholder="New Password" required>
+           <select id="newPosition" name="newPosition" required title="Position">
+              <option value="" disabled selected>Select Position</option>
+              <option value="BrgyOfficial">Brgy. Captain</option>
+              <option value="BrgyOfficial">Brgy. Secretary</option>
+              <option value="BrgyCouncilor">Brgy. Treasurer</option>
+              <option value="BrgyCouncilor">Brgy. Councilor</option>
+           </select>
+            <button type="submit">Register</button>
+            <p>Already have an account? <a href="#" id="showLoginForm">Login</a></p>
+        </form>
+    </div>
+
+        <!-- Main Menu Module -->
+        <div id="mainMenuModule" class="module">
+            <nav class="navbar">
+                <div class="navbar-toggle" id="navbarToggle" onclick="toggleNavbar()">
+                    <div class="navbar-toggle-icon"></div>
+                    <div class="navbar-toggle-icon"></div>
+                    <div class="navbar-toggle-icon"></div>
+                </div>
+                <div class="logo-containernav">
+                 <img src="logoPUROK.png" class="logopic" alt="Logo">
+                 <div class="navbar-logo">Barangay Information System</div>
+                 </div>
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul>
+                        <li><a href="#" id="dashboardLink">Officials</a></li>
+                        <li><a href="#" id="censusLink">Residents</a></li>
+                        <li><a href="#" id="filesLink">Files</a></li>
+                        <li><a href="#" id="purokLink">Census</a></li>
+                    </ul>
+                    <div class="logout-link">
+                        <a href="#" id="logoutLink">Logout</a>
+                    </div>
+                </div>
+            </nav>
+        
+            <div id="dashboardSection" class="section">
+              <h2 class="titlesection">Barangay Officials</h2>
+                <div class="dashboard-card">
+                    
+                    <div id="currentContent">
+                      <h5>Current Barangay Official</h5>
+                      <table>
+                        <!-- Table content -->
+                        <table>
+                          <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                          </tr>
+                          <!-- Sample data -->
+                          <tr>
+                            <td>Hon. Romula Y. Vargas</td>
+                            <td>Barangay Captain</td>
+                          </tr>
+                          <tr>
+                            <td>Analyn B.Tan</td>
+                            <td>Kagawad</td>
+                          </tr>
+                          <tr>
+                              <td>Edgardo C. Tejano</td>
+                              <td>Kagawad</td>
+                            </tr>
+                            <tr>
+                              <td>Adoracion T. Favis</td>
+                              <td>Kagawad</td>
+                            </tr>
+                            <tr>
+                              <td>Amelia S. Cajulao</td>
+                              <td>Kagawad</td>
+                            </tr>
+                            <tr>
+                              <td>Anthony D. Yasay</td>
+                              <td>Kagawad</td>
+                            </tr>
+                            <tr>
+                              <td>Miguel B. Balignasay Jr.</td>
+                              <td>Kagawad</td>
+                            </tr>
+                            <tr>
+                              <td>Juan S. Balidivino</td>
+                              <td>Kagawad</td>
+                            </tr>
+                            <tr>
+                              <td>Rosendo S. Bagalay</td>
+                              <td>Barangay Secretary</td>
+                            </tr>
+                            <tr>
+                              <td>Josephine Y. Sadang</td>
+                              <td>Barangay Treasurer</td>
+                            </tr>
+                          <!-- Add more rows as needed -->
+                        </table>
+                      </table>
+                    </div>
+                    <div id="previousContent" style="display: none;">
+                      <h5>Previous Barangay Official</h5>
+                      <table>
+                        <!-- Table content -->
+                        <table>
+                          <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                          </tr>
+                          <!-- Sample data -->
+                          <tr>
+                            <td>Hon. Romula Y. Vargas</td>
+                            <td>Barangay Captain</td>
+                          </tr>
+                          <tr>
+                            <td>Analyn B. Tan</td>
+                            <td>Kagawad</td>
+                          </tr>
+                          <tr>
+                              <td>Edgardo C. Tejano</td>
+                              <td>Kagawad</td>
+                            </tr>
+                            <tr>
+                              <td>Ernesto A. Favis</td>
+                              <td>Kagawad</td>
+                            </tr>
+                            <tr>
+                              <td>Floro M. Cajulao</td>
+                              <td>Kagawad</td>
+                            </tr>
+                            <tr>
+                              <td>Jaime P. Balignasay</td>
+                              <td>Kagawad</td>
+                            </tr>
+                            <tr>
+                              <td>Rosendo S. Bagalay</td>
+                              <td>Kagawad</td>
+                            </tr>
+                            <tr>
+                              <td>Juan S. Balidivino</td>
+                              <td>Kagawad</td>
+                            </tr>
+                            <tr>
+                              <td>Rosendo S. Bagalay</td>
+                              <td>Barangay Secretary</td>
+                            </tr>
+                            <tr>
+                              <td>Josephine Y. Sadang</td>
+                              <td>Barangay Treasurer</td>
+                            </tr>
+                          <!-- Add more rows as needed -->
+                        </table>
+                      </table>
+                    </div>
+                    <button id="toggleContentButton">Show Previous</button>
+                </div>
+            </div>
+            
+            <div id="censusSection" class="section">
+                <h2 class="titlesection">Residents</h2>
+                <div class="filter">
+                  <input type="text" id="searchInput" placeholder="Search residents...">
+                  <button onclick="sortTable()">Sort A-Z</button>
+              </div>
+              <button id="addResidentBtn" onclick="openAddResidentForm()">Add Resident</button>
+              <table id="residentsTable">
+                <thead>
+                    <tr>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Age</th>
+                        <th>Sex</th>
+                        <th>Civil Status</th>
+                        <th>Occupation</th>
+                        <th>Purok</th>
+                        <th>Household Number</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <tbody id="residentsBody">
+                    <!-- Residents data -->
+                    <tr>
+                        <td>BAGALAY</td>
+                        <td>NORMAN</td>
+                        <td>DUQUE</td>
+                        <td>47</td>
+                        <td>M</td>
+                        <td>MARRIED</td>
+                        <td>LABORER</td>
+                        <td>1</td>
+                        <td>95</td>
+                        <td><button onclick="deleteResident()">Delete</button></td>
+                        <td><button onclick="updateResident()">Update</button></td>
+                    </tr>
+                    <tr>
+                        <td>BAGALAY</td>
+                        <td>LIZA</td>
+                        <td>BALIGNASAY</td>
+                        <td>46</td>
+                        <td>F</td>
+                        <td>MARRIED</td>
+                        <td>HOUSEWIFE</td>
+                        <td>1</td>
+                        <td>95</td>
+                        <td><button onclick="deleteResident()">Delete</button></td>
+                        <td><button onclick="updateResident()">Update</button></td>
+                    </tr>
+                    <!-- Add more residents here -->
+                    <!-- Copy and paste the structure below and fill in the details for each resident -->
+                    <tr>
+                        <td>BAGALAY</td>
+                        <td>JOSHUA</td>
+                        <td>BALIGNASAY</td>
+                        <td>20</td>
+                        <td>M</td>
+                        <td>SINGLE</td>
+                        <td>STUDENT</td>
+                        <td>1</td>
+                        <td>95</td>
+                        <td><button onclick="deleteResident()">Delete</button></td>
+                        <td><button onclick="updateResident()">Update</button></td>
+                    </tr>
+                    <!-- Repeat the above structure for each resident -->
+                    <tr>
+                      <td>BAGALAY</td>
+                      <td>JUSTINE</td>
+                      <td>BALIGNASAY</td>
+                      <td>19</td>
+                      <td>M</td>
+                      <td>SINGLE</td>
+                      <td>STUDENT</td>
+                      <td>1</td>
+                      <td>95</td>
+                      <td><button onclick="deleteResident()">Delete</button></td>
+                      <td><button onclick="updateResident()">Update</button></td>
+                  </tr>
+
+                  <tr>
+                    <td>CALDERON</td>
+                    <td>RAYMUND</td>
+                    <td>CAJULAO</td>
+                    <td>37</td>
+                    <td>M</td>
+                    <td>MARRIED</td>
+                    <td>SALESMAN</td>
+                    <td>1</td>
+                    <td>88</td>
+                    <td><button onclick="deleteResident()">Delete</button></td>
+                    <td><button onclick="updateResident()">Update</button></td>
+                </tr>
+
+                <tr>
+                  <td>CALDERON</td>
+                  <td>MICHELLE</td>
+                  <td>YASAY</td>
+                  <td>36</td>
+                  <td>F</td>
+                  <td>MARRIED</td>
+                  <td>VENDOR</td>
+                  <td>1</td>
+                  <td>88</td>
+                  <td><button onclick="deleteResident()">Delete</button></td>
+                  <td><button onclick="updateResident()">Update</button></td>
+              </tr>
+
+              <tr>
+                <td>CALDERON</td>
+                <td>ANGELO</td>
+                <td>YASAY</td>
+                <td>16</td>
+                <td>M</td>
+                <td>SINGLE</td>
+                <td>STUDENT</td>
+                <td>1</td>
+                <td>88</td>
+                <td><button onclick="deleteResident()">Delete</button></td>
+                <td><button onclick="updateResident()">Update</button></td>
+            </tr>
+
+            <tr>
+              <td>CALDERON</td>
+              <td>SCOTT ANDREW</td>
+              <td>YASAY</td>
+              <td>14</td>
+              <td>M</td>
+              <td>SINGLE</td>
+              <td>STUDENT</td>
+              <td>1</td>
+              <td>88</td>
+              <td><button onclick="deleteResident()">Delete</button></td>
+              <td><button onclick="updateResident()">Update</button></td>
+          </tr>
+
+          <tr>
+            <td>LAPIAN</td>
+            <td>JURIE</td>
+            <td>ASENTISTA</td>
+            <td>41</td>
+            <td>M</td>
+            <td>MARRIED</td>
+            <td>SECURITY GUARD</td>
+            <td>1</td>
+            <td>94</td>
+            <td><button onclick="deleteResident()">Delete</button></td>
+            <td><button onclick="updateResident()">Update</button></td>
+        </tr>
+
+        <tr>
+          <td>LAPIAN</td>
+          <td>NOVA</td>
+          <td>BALIGNASAY</td>
+          <td>37</td>
+          <td>F</td>
+          <td>MARRIED</td>
+          <td>HOUSE WIFE</td>
+          <td>1</td>
+          <td>94</td>
+          <td><button onclick="deleteResident()">Delete</button></td>
+          <td><button onclick="updateResident()">Update</button></td>
+      </tr>
+
+      <tr>
+        <td>LAPIAN</td>
+        <td>JEFERSON</td>
+        <td>BALIGNASAY</td>
+        <td>15</td>
+        <td>M</td>
+        <td>SINGLE</td>
+        <td>STUDENT</td>
+        <td>1</td>
+        <td>94</td>
+        <td><button onclick="deleteResident()">Delete</button></td>
+        <td><button onclick="updateResident()">Update</button></td>
+    </tr>
+     
+    <tr>
+      <td>LAPIAN</td>
+      <td>ANDREW DAWN</td>
+      <td>BALIGNASAY</td>
+      <td>7</td>
+      <td>M</td>
+      <td>SINGLE</td>
+      <td>STUDENT</td>
+      <td>1</td>
+      <td>94</td>
+      <td><button onclick="deleteResident()">Delete</button></td>
+      <td><button onclick="updateResident()">Update</button></td>
+  </tr>
+
+  <tr>
+    <td>MARQUEZ</td>
+    <td>ROMUALDO</td>
+    <td>VALDOVE</td>
+    <td>51</td>
+    <td>M</td>
+    <td>MARRIED</td>
+    <td>VENDOR</td>
+    <td>1</td>
+    <td>99</td>
+    <td><button onclick="deleteResident()">Delete</button></td>
+    <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>MARQUEZ</td>
+  <td>ROSALINDA</td>
+  <td>CAJULAO</td>
+  <td>54</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>VENDOR</td>
+  <td>1</td>
+  <td>99</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>MARQUEZ</td>
+  <td>REGINO</td>
+  <td>CAJULAO</td>
+  <td>27</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>COLLECTOR</td>
+  <td>1</td>
+  <td>99</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>MARQUEZ</td>
+  <td>RONA</td>
+  <td>CAJULAO</td>
+  <td>19</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>1</td>
+  <td>99</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JOEY BOY</td>
+  <td>PERALTA</td>
+  <td>42</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>LABORER</td>
+  <td>1</td>
+  <td>89</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>CECILLE</td>
+  <td>EDWARTE</td>
+  <td>33</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>SALES LADY</td>
+  <td>1</td>
+  <td>89</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JERYN SHAYNE</td>
+  <td>EDWARTE</td>
+  <td>14</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>1</td>
+  <td>89</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JARAH CEL</td>
+  <td>EDWARTE</td>
+  <td>12</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>1</td>
+  <td>89</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>DIOS</td>
+  <td>PERALTA</td>
+  <td>55</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>CARPENTER</td>
+  <td>1</td>
+  <td>87</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>ELENITA</td>
+  <td>TACUT</td>
+  <td>57</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>VENDOR</td>
+  <td>1</td>
+  <td>87</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>MICHAEL</td>
+  <td>TACUT</td>
+  <td>37</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>LABORER</td>
+  <td>1</td>
+  <td>87</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>MARYJOY</td>
+  <td>TACUT</td>
+  <td>24</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>1</td>
+  <td>87</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>VALENTINO</td>
+  <td>NAVARRO</td>
+  <td>49</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>LABORER</td>
+  <td>1</td>
+  <td>86</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JONACEL</td>
+  <td>VILLESA</td>
+  <td>40</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>VENDOR</td>
+  <td>1</td>
+  <td>86</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>EVANGLINE</td>
+  <td>VILLESA</td>
+  <td>22</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>1</td>
+  <td>86</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>ANGELINE</td>
+  <td>VILLESA</td>
+  <td>11</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>1</td>
+  <td>86</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>CHRISTOPER</td>
+  <td>NAVARRO</td>
+  <td>39</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>LABORER</td>
+  <td>1</td>
+  <td>85</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>YVETTE</td>
+  <td>PERALTA</td>
+  <td>43</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>HOUSEKEEPER</td>
+  <td>1</td>
+  <td>85</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>BERNADETTE</td>
+  <td>PERALTA</td>
+  <td>17</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>1</td>
+  <td>85</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>MARK JUSTINE</td>
+  <td>PERALTA</td>
+  <td>16</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>1</td>
+  <td>85</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>BAGALAY</td>
+  <td>EDISON</td>
+  <td>CAJULAO</td>
+  <td>39</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>LABORER</td>
+  <td>1</td>
+  <td>80</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>BAGALAY</td>
+  <td>KIMBERLY</td>
+  <td>GABUYO</td>
+  <td>28</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>SALESLADY</td>
+  <td>1</td>
+  <td>80</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>BAGALAY</td>
+  <td>JASMIME RAINE</td>
+  <td>GABUYO</td>
+  <td>11</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>1</td>
+  <td>80</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>BAGALAY</td>
+  <td>FLORENZ EDISON</td>
+  <td>GABUYO</td>
+  <td>8</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>1</td>
+  <td>80</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>PAGINAG</td>
+  <td>JOSELITO</td>
+  <td></td>
+  <td>54</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>LABORER</td>
+  <td>1</td>
+  <td>71</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>PAGINAG</td>
+  <td>JULIETA</td>
+  <td>YASAY</td>
+  <td>49</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>HOUSE KEEPER</td>
+  <td>1</td>
+  <td>71</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>PAGINAG</td>
+  <td>JULIE ANN</td>
+  <td>YASAY</td>
+  <td>28</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>OFW</td>
+  <td>1</td>
+  <td>71</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>PAGINAG</td>
+  <td>JULIUS</td>
+  <td>YASAY</td>
+  <td>27</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>LABORER</td>
+  <td>1</td>
+  <td>71</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>PAGINAG</td>
+  <td>JOYCE FIEL</td>
+  <td>YASAY</td>
+  <td>21</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>1</td>
+  <td>71</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>PAGINAG</td>
+  <td>JULIET</td>
+  <td>YASAY</td>
+  <td>5</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>1</td>
+  <td>71</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>GABUYO</td>
+  <td>ROLANDO</td>
+  <td>CAJULAO</td>
+  <td>65</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>LABORER</td>
+  <td>1</td>
+  <td>66</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>GABUYO</td>
+  <td>VILMA</td>
+  <td>SOLIVEN</td>
+  <td>50</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>VENDOR</td>
+  <td>1</td>
+  <td>66</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>GABUYO</td>
+  <td>ROSALIE</td>
+  <td>SOLIVEN</td>
+  <td>26</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>EMPLOYEE</td>
+  <td>1</td>
+  <td>66</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>GABUYO</td>
+  <td>RONALDO</td>
+  <td>SOLIVEN</td>
+  <td>17</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>1</td>
+  <td>66</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>GABUYO</td>
+  <td>ROSALINDA</td>
+  <td>SOLIVEN</td>
+  <td>21</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>MARRIED</td>
+  <td>1</td>
+  <td>66</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>GABUYO</td>
+  <td>RODEL</td>
+  <td>SOLIVEN</td>
+  <td>16</td>
+  <td>M</td>
+  <td>STUDENT</td>
+  <td>SINGLE</td>
+  <td>1</td>
+  <td>66</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>GABUYO</td>
+  <td>REYMARK</td>
+  <td>SOLIVEN</td>
+  <td>20</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>1</td>
+  <td>66</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>JOSE</td>
+  <td>CRISTOPHER</td>
+  <td>CAJULAO</td>
+  <td>40</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>LABORER</td>
+  <td>1</td>
+  <td>64</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>JOSE</td>
+  <td>AILEEN</td>
+  <td>BAGALAY</td>
+  <td>38</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>VENDOR</td>
+  <td>1</td>
+  <td>64</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JORGE</td>
+  <td>BALIGNASAY</td>
+  <td>60</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>TEACHER</td>
+  <td>2</td>
+  <td>113</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>CLEOPATRA</td>
+  <td>ANDRES</td>
+  <td>50</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>TEACHER</td>
+  <td>2</td>
+  <td>113</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JOANA ANDRES</td>
+  <td>BALIGNASAY</td>
+  <td>32</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>TEACHER</td>
+  <td>2</td>
+  <td>113</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JEORGE PATRICK</td>
+  <td>ANDRES</td>
+  <td>30</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>LAWYER</td>
+  <td>2</td>
+  <td>113</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JOANA ANGELICA</td>
+  <td>ANDRES</td>
+  <td>22</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>TEACHER INSRUCTOR</td>
+  <td>2</td>
+  <td>113</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JOANA JESSICA</td>
+  <td>ANDRES</td>
+  <td>28</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>NUTRITIONIST</td>
+  <td>2</td>
+  <td>113</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JOANA ALVIA</td>
+  <td>ANDRES</td>
+  <td>27</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>113</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JOANA FRANZELLE</td>
+  <td>ANDRES</td>
+  <td>22</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>113</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JANDRE BENEDICT</td>
+  <td>ANDRES</td>
+  <td>16</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>113</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JERSON</td>
+  <td>FERNANDEZ</td>
+  <td>39</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>DRIVER</td>
+  <td>2</td>
+  <td>156</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>RACHEL</td>
+  <td>BRIOSO</td>
+  <td>39</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>HOUSE WIFE</td>
+  <td>2</td>
+  <td>156</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JOSHELLA</td>
+  <td>BRIOSO</td>
+  <td>13</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>156</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>CARL JAYSON</td>
+  <td>BRIOSO</td>
+  <td>12</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>156</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>GABRIEL TIMOTHY</td>
+  <td>BRIOSO</td>
+  <td>8</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>156</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>CAJULAO</td>
+  <td>LORENZO</td>
+  <td>BALDIVINO</td>
+  <td>64</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>DRIVER</td>
+  <td>2</td>
+  <td>189</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>CAJULAO</td>
+  <td>LAGRIMAS</td>
+  <td>SORIANO</td>
+  <td>55</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>HOUSEWIFE</td>
+  <td>2</td>
+  <td>189</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>CAJULAO</td>
+  <td>LORISA</td>
+  <td>SORIANO</td>
+  <td>30</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>MARRIED</td>
+  <td>2</td>
+  <td>189</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>IWARAT</td>
+  <td>TIMOTHY KAYE</td>
+  <td>SORIANO</td>
+  <td>21</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>189</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>IWARAT</td>
+  <td>JOHN KENNETH</td>
+  <td>SORIANO</td>
+  <td>18</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>189</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>IWARAT</td>
+  <td>CHANEL GABRIELLA</td>
+  <td>SORIANO</td>
+  <td>9</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>189</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>CAJULAO</td>
+  <td>MARK</td>
+  <td>TACUT</td>
+  <td>37</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>SECURITY GUARD</td>
+  <td>2</td>
+  <td>160</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>CAJULAO</td>
+  <td>OLIVIA</td>
+  <td>BALIGNASAY</td>
+  <td>44</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>HOUSEWIFE</td>
+  <td>2</td>
+  <td>160</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>CAJULAO</td>
+  <td>VIANE MARK</td>
+  <td>BALIGNASAY</td>
+  <td>19</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>160</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>CAJULAO</td>
+  <td>MARK CHRISTIAN</td>
+  <td>BALIGNASAY</td>
+  <td>12</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>160</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>CAJULAO</td>
+  <td>VIENE MARK</td>
+  <td>BALIGNASAY</td>
+  <td>8</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>MARRIED</td>
+  <td>2</td>
+  <td>160</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>SADANG</td>
+  <td>ARNEL</td>
+  <td>CARANTO</td>
+  <td>48</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>TEACHER</td>
+  <td>2</td>
+  <td>159</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>SADANG</td>
+  <td>JULIET</td>
+  <td>TAMAYO</td>
+  <td>52</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>TEACHER</td>
+  <td>2</td>
+  <td>159</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>SADANG</td>
+  <td>LEMRA JOY</td>
+  <td>TAMAYO</td>
+  <td>25</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>EMPLOYEE</td>
+  <td>2</td>
+  <td>159</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>SADANG</td>
+  <td>JUNELLE DEMME</td>
+  <td>TAMAYO</td>
+  <td>23</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>159</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>SADANG</td>
+  <td>JUSTINE MHEL</td>
+  <td>TAMAYO</td>
+  <td>15</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>159</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>SADANG</td>
+  <td>ARNEL JEDD</td>
+  <td>TAMAYO</td>
+  <td>12</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>159</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>FION</td>
+  <td>FERNANDEZ</td>
+  <td>36</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>DRIVER</td>
+  <td>2</td>
+  <td>157</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>RUSSEL</td>
+  <td>OBILLO</td>
+  <td>39</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>HOUSEWIFE</td>
+  <td>2</td>
+  <td>157</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>DANIELLA AVISAH</td>
+  <td>OBILLO</td>
+  <td>12</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>157</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>DANIELLA ALEXA</td>
+  <td>OBILLO</td>
+  <td>11</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>157</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>PRINCE ROIF</td>
+  <td>OBILLO</td>
+  <td>7</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>157</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>JOSE AMANTE</td>
+  <td>OBILLO</td>
+  <td>5</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>157</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>MATT RUSSEL</td>
+  <td>OBILLO</td>
+  <td>3</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>157</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>MARQUEZ</td>
+  <td>CORAZON</td>
+  <td>VELASCO</td>
+  <td>75</td>
+  <td>F</td>
+  <td>WDOWED</td>
+  <td>NONE</td>
+  <td>2</td>
+  <td>122</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>MENDOZA</td>
+  <td>DINA</td>
+  <td>MARQUEZ</td>
+  <td>59</td>
+  <td>F</td>
+  <td>WDOWED</td>
+  <td>NONE</td>
+  <td>2</td>
+  <td>122</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>MENDOZA</td>
+  <td>FRANCIS DAN</td>
+  <td>MARQUEZ</td>
+  <td>15</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>122</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>MAGNO</td>
+  <td>JENNIREY</td>
+  <td>MENDOZA</td>
+  <td>32</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>AGENT</td>
+  <td>2</td>
+  <td>122</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>MAGNO</td>
+  <td>FRANCIS CHLOE</td>
+  <td>MENDOZA</td>
+  <td>8</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>122</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>GABUYO</td>
+  <td>RONNIE</td>
+  <td>CAJULAO</td>
+  <td>46</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>FARMER</td>
+  <td>2</td>
+  <td>123</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>GABUYO</td>
+  <td>MERLITA</td>
+  <td>MERCADO</td>
+  <td>41</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>HOUSE WIFE</td>
+  <td>2</td>
+  <td>123</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>GABUYO</td>
+  <td>ROMEL</td>
+  <td>MERCADO</td>
+  <td>21</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>123</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>GABUYO</td>
+  <td>ROMELYN</td>
+  <td>MERCADO</td>
+  <td>19</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>123</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>GABUYO</td>
+  <td>ROMEL JOHN</td>
+  <td>MERCADO</td>
+  <td>12</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>123</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>GABUYO</td>
+  <td>ROMER</td>
+  <td>MERCADO</td>
+  <td>9</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>123</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>GABUYO</td>
+  <td>LOUISE JADE</td>
+  <td>MARCADO</td>
+  <td>7</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>2</td>
+  <td>123</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>BALDADO</td>
+  <td>ROBERT</td>
+  <td></td>
+  <td>43</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>DRIVER</td>
+  <td>3</td>
+  <td>270</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>BALDADO</td>
+  <td>MARIDEM</td>
+  <td>MANZANO</td>
+  <td>37</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>HOUSEWIFE</td>
+  <td>3</td>
+  <td>270</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>BALDADO</td>
+  <td>JUSTINE</td>
+  <td>MANZANO</td>
+  <td>16</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>270</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>BALDADO</td>
+  <td>MAYNARD</td>
+  <td>MANZANO</td>
+  <td>15</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>270</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>BALDADO</td>
+  <td>APRIL ANN</td>
+  <td>MANZANO</td>
+  <td>15</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>270</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>FLORES</td>
+  <td>ARNOLD</td>
+  <td>DELA CRUZ</td>
+  <td>28</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>NONE</td>
+  <td>3</td>
+  <td>207</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>FLORES</td>
+  <td>IRENE</td>
+  <td>YU</td>
+  <td>38</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>OFW</td>
+  <td>3</td>
+  <td>207</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>FLORES</td>
+  <td>HEARTY VALERIE</td>
+  <td>YU</td>
+  <td>15</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>207</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>FLORES</td>
+  <td>KATE ARLENE</td>
+  <td>YU</td>
+  <td>12</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>207</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>FLORES</td>
+  <td>QUENE NOREEN</td>
+  <td>YU</td>
+  <td>10</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>207</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>CAJULAO</td>
+  <td>FLORO</td>
+  <td>MAGBALOT</td>
+  <td>51</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>DRIVER</td>
+  <td>3</td>
+  <td>304</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>CAJULAO</td>
+  <td>JOHN JOVET</td>
+  <td>CAPINPIN</td>
+  <td>24</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>JANITOR</td>
+  <td>3</td>
+  <td>304</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>CAJULAO</td>
+  <td>SHEEN</td>
+  <td>CAPINPIN</td>
+  <td>23</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>304</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>CAJULAO</td>
+  <td>SHANE EMBRIE</td>
+  <td>CAPINPIN</td>
+  <td>23</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>304</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>CAJULAO</td>
+  <td>JARED</td>
+  <td>CAPINPIN</td>
+  <td>22</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>304</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>DAILEG</td>
+  <td>ZENON</td>
+  <td>MAGBALOT</td>
+  <td>56</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>OFW</td>
+  <td>3</td>
+  <td>307</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>DAILEG</td>
+  <td>ARSENIA</td>
+  <td>YASAY</td>
+  <td>56</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>HOUSEIFE</td>
+  <td>3</td>
+  <td>307</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>DAILEG</td>
+  <td>KENRICK</td>
+  <td>YASAY</td>
+  <td>30</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>307</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>DAILEG</td>
+  <td>KATHY</td>
+  <td>YASAY</td>
+  <td>35</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>307</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>DAILEG</td>
+  <td>KENNETH</td>
+  <td>YASAY</td>
+  <td>24</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>307</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>LOVINO</td>
+  <td>CESARIO</td>
+  <td>FERRER</td>
+  <td>46</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>CARPENTER</td>
+  <td>3</td>
+  <td>209</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>LOVINO</td>
+  <td>VIVIAN</td>
+  <td>EMBANG</td>
+  <td>41</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>OFW</td>
+  <td>3</td>
+  <td>209</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>LOVINO</td>
+  <td>CHRISTIAN</td>
+  <td>EMBANG</td>
+  <td>28</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>BUSINESS OWNER</td>
+  <td>3</td>
+  <td>209</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>LOVINO</td>
+  <td>CHRISTOPER</td>
+  <td>EMBANG</td>
+  <td>26</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>209</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>LOVINO</td>
+  <td>CESARIO JOHN</td>
+  <td>EMBANG</td>
+  <td>12</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>209</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>DAILEG</td>
+  <td>EMILIO</td>
+  <td>MAGBALOT</td>
+  <td>50</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>CARPENTER</td>
+  <td>3</td>
+  <td>292</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>DAILEG</td>
+  <td>JINKY</td>
+  <td>TACUT</td>
+  <td>47</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>SARI SARI STORE</td>
+  <td>3</td>
+  <td>292</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>DAILEG</td>
+  <td>HENIROY</td>
+  <td>TACUT</td>
+  <td>24</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>EMPLOYED</td>
+  <td>3</td>
+  <td>292</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>DAILEG</td>
+  <td>JOHN PHILIP</td>
+  <td>TACUT</td>
+  <td>29</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>292</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>DAILEG</td>
+  <td>TIMOTEO</td>
+  <td>BALDIVINO</td>
+  <td>16</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>292</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>MAGLAQUI</td>
+  <td>ELECER</td>
+  <td>VILLANUEVA</td>
+  <td>41</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>CARPENTER</td>
+  <td>3</td>
+  <td>228</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>MAGLAQUI</td>
+  <td>ALMA</td>
+  <td>ESPEJO</td>
+  <td>44</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>HOUSE WIFE</td>
+  <td>3</td>
+  <td>228</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>MAGLAQUI</td>
+  <td>ELMARIE</td>
+  <td>ESPEJO</td>
+  <td>21</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>228</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>MAGLAQUI</td>
+  <td>ALLAMARIE</td>
+  <td>ESPEJO</td>
+  <td>20</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>228</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>MAGLAQUI</td>
+  <td>ELECER</td>
+  <td>ESPEJO</td>
+  <td>19</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>228</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>ROCILLO</td>
+  <td>AGUSTINE</td>
+  <td>MANALO</td>
+  <td>50</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>VENDOR</td>
+  <td>3</td>
+  <td>324</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>ROCILLO</td>
+  <td>MAUREEN</td>
+  <td>YASAY</td>
+  <td>46</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>PWD</td>
+  <td>3</td>
+  <td>324</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>ROCILLO</td>
+  <td>JUST MAU</td>
+  <td>YASAY</td>
+  <td>20</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>324</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>ROCILLO</td>
+  <td>VINCENT</td>
+  <td>YASAY</td>
+  <td>16</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>324</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>ROCILLO</td>
+  <td>PRINCESS ANDREA</td>
+  <td>YASAY</td>
+  <td>14</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>324</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>ROCILLO</td>
+  <td>GIAN CARLO</td>
+  <td>YASAY</td>
+  <td>12</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>324</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>ROCILLO</td>
+  <td>ANDREW</td>
+  <td>YASAY</td>
+  <td>9</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>324</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>PERALTA</td>
+  <td>LARRY</td>
+  <td>BALER</td>
+  <td>52</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>DRIVER</td>
+  <td>3</td>
+  <td>304</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>PERALTA</td>
+  <td>NELIA</td>
+  <td>YASAY</td>
+  <td>51</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>VENDOR</td>
+  <td>3</td>
+  <td>304</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>PERALTA</td>
+  <td>LIEZEL</td>
+  <td>YASAY</td>
+  <td>26</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>304</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>PERALTA</td>
+  <td>LYKA</td>
+  <td>YASAY</td>
+  <td>19</td>
+  <td>F</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>304</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>PERALTA</td>
+  <td>LESTER</td>
+  <td>YASAY</td>
+  <td>13</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>304</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>DENNIS</td>
+  <td>PERALTA</td>
+  <td>41</td>
+  <td>M</td>
+  <td>MARRIED</td>
+  <td>DRIVER</td>
+  <td>3</td>
+  <td>329</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>LERMA</td>
+  <td>PERALTA</td>
+  <td>41</td>
+  <td>F</td>
+  <td>MARRIED</td>
+  <td>HOUSEWIFE</td>
+  <td>3</td>
+  <td>329</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+<tr>
+  <td>YASAY</td>
+  <td>DENVER</td>
+  <td>PERALTA</td>
+  <td>13</td>
+  <td>M</td>
+  <td>SINGLE</td>
+  <td>STUDENT</td>
+  <td>3</td>
+  <td>329</td>
+  <td><button onclick="deleteResident()">Delete</button></td>
+  <td><button onclick="updateResident()">Update</button></td>
+</tr>
+
+                </tbody>
+            </table>
+          </div>
+          <!-- Add Resident Modal -->
+          <div id="addResidentModal" class="modal">
+              <div class="modal-content">
+                  <span class="close" onclick="closeAddResidentForm()">&times;</span>
+                  <!-- Add Resident Form will be inserted here -->
+              </div>
+          </div>
+          <!-- Add Resident Modal -->
+        
+            
+          <div id="filesSection" class="section">
+            <h2 class="titlesection">Files</h2>
+            <div class="file-container">
+                <!-- Individual file containers will be dynamically added here -->
+                <!-- Sample individual file container -->
+                <div class="file">
+                    <div class="file-content">
+                        <img src="FilesSectionsContent/RESIDENCEPDF.PNG" alt="File Image">
+                    </div>  
+                </div>
+                <!-- Individual file containers will be dynamically added here -->
+                <!-- Sample individual file container -->
+                <div class="file">
+                    <div class="file-content">
+                        <img src="FilesSectionsContent/INDIGENCYPDF.PNG" alt="File Image">
+                    </div>
+                </div>
+                <!-- Individual file containers will be dynamically added here -->
+                <!-- Sample individual file container -->
+                <div class="file">
+                    <div class="file-content">
+                        <img src="FilesSectionsContent/CLEARANCEPDF.PNG" alt="File Image">
+                    </div>
+                </div>
+                <!-- Individual file containers will be dynamically added here -->
+                <!-- Sample individual file container -->
+                <div class="file">
+                    <div class="file-content">
+                        <img src="FilesSectionsContent/BUSINESSPERMITPDF.PNG" alt="File Image">
+                    </div>
+                    
+                </div>
+            </div>
+            <button id="downloadAllBtn">Download All</button>
+        </div>
+            
+            <div id="purokSection" class="section">
+                <h2 class="titlesection">Census</h2>
+                <div class="purok-grid">
+                  <div class="purok-item">
+                      <h3 class="purok-header">Population Per Purok</h3>
+                      <p class="purok-content">PUROK 1 - 417</p>
+                      <p class="purok-content">PUROK 2 - 762</p>
+                      <p class="purok-content">PUROK 3 - 531</p>
+                  </div>
+                  <div class="purok-item">
+                      <h3 class="purok-header">Registered Population</h3>
+                      <p class="purok-content">Total: 1,710</p>
+                      <p class="purok-content">MALE - 825</p>
+                      <p class="purok-content">FEMALE - 885</p>
+                  </div>
+                  <div class="purok-item">
+                      <h3 class="purok-header">Registered Voters</h3>
+                      <p class="purok-content">Total: 1,242</p>
+                      <p class="purok-content">Household - 429</p>
+                      <p class="purok-content">Head of the Family -  539</p>
+                  </div>
+               </div>
+             </div>
+   
+        
+    </div>
+   </div>  
+
+   
+    <script src="script.js"></script>
+</body>
+</html>
